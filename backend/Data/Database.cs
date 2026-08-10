@@ -67,8 +67,6 @@ namespace backend.Data
                 ";
                 seedCmd.ExecuteNonQuery();
             }
-
-            Console.WriteLine("Base de datos inicializada");
         }
     }
 }

@@ -1,6 +1,32 @@
 @backend_HostAddress = http://localhost:5298
 
-GET {{backend_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{backend_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Sample Product",
+  "description": "This is a sample product.",
+  "price": 19.99,
+  "stock": 100,
+  "category": "Sample Category",
+  "createdAt": "2023-01-01T00:00:00Z"
+}
+###
+POST {{backend_HostAddress}}/api/movements
+Content-Type: application/json
+
+{
+  "id": 1,
+    "productId": 9,
+    "type": "salida",
+    "quantity": 20,
+    "note": "Reposición de stock completado",
+    "createdAt": "2026-05-30",
+    "productName": "Laptop Pro"
+}
 
 ###
+GET {{backend_HostAddress}}/api/movements
+###
+GET {{backend_HostAddress}}/api/products
+
